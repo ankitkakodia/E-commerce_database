@@ -33,7 +33,7 @@ create_product_table = f'''
                         description varchar(516),
                         date_created timestamp default current_timestamp Not Null,
                         date_updated timestamp default current_timestamp Not Null,
-                        returns_available BIT(1),
+                        returns_available BIT(1) Not Null,
                         tags varchar(10)
                         )auto_increment=101;'''
 cur.execute(create_product_table)
@@ -49,5 +49,5 @@ create_category_table = f'''
 cur.execute(create_category_table)
 print("category table created")
 
-# conn.close()
+
 
