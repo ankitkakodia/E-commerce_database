@@ -204,3 +204,4 @@ def view_products(cur):
     else:
         print('Invalid Input')
         
+# def edit_product(cur):
