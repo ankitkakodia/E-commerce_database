@@ -12,8 +12,7 @@ create_user_table = f'''
         create table if not exists users(
         id int primary key auto_increment,
         name varchar(50),
-        username varchar(50) unique,
-        password varchar(256) Not Null,
+        password varchar(256),
         email varchar(50) unique,
         phone varchar(15) unique,
         date_joined timestamp default current_timestamp Not Null,

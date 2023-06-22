@@ -132,7 +132,12 @@ def add_category(cur):
 
 def add_product(cur):
     product_name = input('Enter Product Name: ').title().strip()
-    price = int(input('Enter price: '))
+    # price = int(input('Enter price: '))
+    try:
+        price = int(input('Enter price: '))
+    except:
+        print('Invalid input, please input integer value')
+        price = ''
     cat_name = input('Enter Category Name: ').title().strip()
     select = f'select id from category where category_name = "{cat_name}";'
     cur.execute(select)
@@ -150,7 +155,6 @@ def add_product(cur):
         print('Please enter valid input')
         return_product = ''
     tags = input('Enter tags: ')
-    print(return_product,product_name,price,cat_id,description,tags)
     if product_name == '' or price == '' or cat_id == '' or return_product == '':
         print('Please enter complete information')
     else:
